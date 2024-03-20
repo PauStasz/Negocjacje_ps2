@@ -65,14 +65,13 @@ class Graph:
 
         self.__result = [temp[1] for temp in afterSort]
 
+        self.__weights = sorted(self.__weights)
 
     def bestRoutes(self):
-
-        weights = sorted(self.__weights)
 
         for i in range(36):
             route = self.__result[i]
             if isinstance(route, list):
-                print("Sposób nr "  + str(i + 1) + ": " + str(route[0].value) + " -> " + str(route[1].value) + " -> " + str(route[2].value) + ", waga: " + str(weights[i]))
+                print("Wariant nr "  + str(i + 1) + ": " + str(route[0].value) + " -> " + str(route[1].value) + " -> " + str(route[2].value) + ", waga: " + str(self.__weights[i]))
 
 
