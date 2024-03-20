@@ -31,7 +31,7 @@ class Graph:
                                     temp = [node, delivery, price] # tworzenie krawedzi cena -> dostawa -> zapłata
                                     self.__edges.append(temp)
                                     print("Stworzona ścieżka: " + str(node.value) + " -> " + str(delivery.value) + " -> " + str(price.value) )
-                                    sum = 0
+                                    sum = 0 #ta czesc mozna w funkcje walnac pozniej i parametry bo sie tylko to powtarza
                                     if(node.value == 40):
                                         sum =  sum + 100
                                     elif(node.value == 42):
