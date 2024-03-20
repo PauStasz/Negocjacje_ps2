@@ -3,7 +3,6 @@ from Models.Node import Node
 class Graph:
     def __init__(self, nodes):
         self.__nodes = nodes
-        self.__edgesNumber = len(nodes)
         self.__edges = []
         self.__weights = []
         self.__result = []
