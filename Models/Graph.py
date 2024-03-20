@@ -49,9 +49,9 @@ class Graph:
                                     if(price.value == "7-30"):
                                         sum =  sum + 3
                                     elif(price.value == "0-3"):
-                                        sum =  sum + 2
-                                    elif(price.value == "3-7"):
                                         sum =  sum + 1
+                                    elif(price.value == "3-7"):
+                                        sum =  sum + 2
 
 
                                     self.__weights.append(sum) # suma ścieżki, czyli 1 krawedzi -> cena -> dostawa -> zapłata
