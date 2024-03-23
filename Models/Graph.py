@@ -1,3 +1,6 @@
+import networkx as nx
+from matplotlib import pyplot as plt
+
 from Models.Node import Node
 
 class Graph:
@@ -117,4 +120,28 @@ class Graph:
             if isinstance(route, list):
                 print("Wariant nr "  + str(i + 1) + ": " + str(route[0].value) + " -> " + str(route[1].value) + " -> " + str(route[2].value) + ", waga: " + str(self.__weights[i]))
 
+    def visualize(self):
+        G = nx.DiGraph()
+        for edge in self.__edges:
+            G.add_edge(edge[0].value, edge[1].value)
+            G.add_edge(edge[1].value, edge[2].value)
 
+        pos = {
+            40: (0, 2),
+            42: (0, 1),
+            45: (0, 0),
+            50: (0, -1),
+            "0-2": (2, 2),
+            "2-7": (2, 1),
+            "7-14": (2, 0),
+            "0-3": (4, 2),
+            "3-7": (4, 1),
+            "7-30": (4, 0)
+        }
+
+        labels = {}
+        for node in self.__nodes:
+            labels[node.value] = f"{node.type}: {node.value}"
+
+        nx.draw(G, pos, with_labels=True, labels=labels, node_size=6000, node_color='skyblue', font_size=10, font_weight='bold', arrows=True, arrowstyle='->')
+        plt.show()

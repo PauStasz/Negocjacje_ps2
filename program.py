@@ -15,3 +15,4 @@ if __name__ == '__main__':
              Node("0-3", "ZAPŁATA"), Node("3-7", "ZAPŁATA"), Node("7-30", "ZAPŁATA")]
 
     graph = Graph(nodes)
+    graph.visualize()
